@@ -240,3 +240,7 @@ python train_quadruped.py
 - PyTorch 2.9.1+cpu
 - Gymnasium 1.2.2
 - NumPy 2.3.5
+
+## Author
+
+Rabbot Laboratory Team.
