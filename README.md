@@ -45,9 +45,9 @@ brew install uv
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### プロジェクトのセットアップ
+### セットアップ
 
-1. リポジトリのクローン（または移動）
+1. リポジトリのクローン
 
 ```bash
 git clone https://github.com/kim-xps12/rabbot-rl-walk.git
@@ -88,10 +88,10 @@ uv run src/train_quadruped.py
 
 ### 学習経過の可視化
 
-学習を開始したのとは別のterminalを開いて以下を実行することでブラウザからtensroboardを利用して経過を確認できます，
+学習を開始したのとは別のterminalを開いて，以下を実行することでブラウザからtensroboardを利用して経過を確認できます，
 
 ```bash
-uv run tensorboard --logdir=logs
+uv run python -m tensorboard.main --logdir=logs --port=6006
 ```
 
 **注意**: 学習には時間がかかります。
@@ -101,7 +101,6 @@ uv run tensorboard --logdir=logs
 学習済みモデルを使用してロボットの動作を可視化します：
 
 ```bash
-# macOSではmjpythonを使用
 uv run src/visualize.py  
 ```
 
