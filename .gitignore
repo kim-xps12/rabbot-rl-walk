@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# uv
+.uv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 学習結果
+logs/
+output/
+*.zip
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# TensorBoard
+events.out.tfevents.*
+
+# データファイル
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# MuJoCo
+*.mjb
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+*.log

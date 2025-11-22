@@ -1,0 +1,17 @@
+[project]
+name = "quadruped-air-ppo"
+version = "0.1.0"
+description = "Quadruped robot gait learning with PPO"
+requires-python = ">=3.11"
+dependencies = [
+    "gymnasium>=1.2.2",
+    "mujoco>=3.0.0",
+    "stable-baselines3>=2.7.0",
+    "numpy>=2.0.0",
+    "torch>=2.0.0",
+    "tensorboard>=2.14.0",
+    "matplotlib>=3.8.0",
+    "mujoco-python-viewer>=0.1.4",
+    "tqdm>=4.67.1",
+    "rich>=14.2.0",
+]

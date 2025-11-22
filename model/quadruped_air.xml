@@ -1,0 +1,72 @@
+<mujoco model="air_cylinder_quadruped">
+  <option timestep="0.005" gravity="0 0 -9.81"/>
+
+  <default>
+    <joint damping="1.0" frictionloss="0.5"/>
+    <motor gear="100" ctrllimited="true" ctrlrange="-1 1"/>
+    <geom size="0.05"/>
+  </default>
+
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1"/>
+    <geom name="floor" type="plane" size="5 5 0.1" rgba="0.2 0.2 0.2 1" friction="1.5 0.1 0.1"/>
+
+    <!-- 胴体 -->
+    <body name="torso" pos="0 0 0.5">
+      <joint type="free"/>
+      <geom type="box" size="0.15 0.25 0.05" rgba="0.2 0.5 0.8 1" density="1000"/>
+
+      <!-- Front Left Leg (赤色) -->
+      <body name="FL_hip" pos="-0.15 0.15 0">
+        <joint name="FL_hip_joint" axis="1 0 0" range="20 90"/>
+        <geom type="capsule" fromto="0 0 0 0 0.1 -0.2" size="0.03" rgba="1 0 0 1" density="1000"/>
+        <body name="FL_knee" pos="0 0.1 -0.2">
+          <joint name="FL_knee_joint" axis="1 0 0" range="-90 -20"/>
+          <geom type="capsule" fromto="0 0 0 0 0 -0.2" size="0.03" rgba="1 0 0 1" density="800"/>
+        </body>
+      </body>
+
+      <!-- Front Right Leg (赤色) -->
+      <body name="FR_hip" pos="0.15 0.15 0">
+        <joint name="FR_hip_joint" axis="1 0 0" range="20 90"/>
+        <geom type="capsule" fromto="0 0 0 0 0.1 -0.2" size="0.03" rgba="1 0 0 1" density="1000"/>
+        <body name="FR_knee" pos="0 0.1 -0.2">
+          <joint name="FR_knee_joint" axis="1 0 0" range="-90 -20"/>
+          <geom type="capsule" fromto="0 0 0 0 0 -0.2" size="0.03" rgba="1 0 0 1" density="800"/>
+        </body>
+      </body>
+
+      <!-- Back Left Leg -->
+      <body name="BL_hip" pos="-0.15 -0.15 0">
+        <joint name="BL_hip_joint" axis="1 0 0" range="-90 -20"/>
+        <geom type="capsule" fromto="0 0 0 0 -0.1 -0.2" size="0.03" rgba="0.8 0.6 0.4 1" density="1000"/>
+        <body name="BL_knee" pos="0 -0.1 -0.2">
+          <joint name="BL_knee_joint" axis="1 0 0" range="20 90"/>
+          <geom type="capsule" fromto="0 0 0 0 0 -0.2" size="0.03" rgba="0.8 0.6 0.4 1" density="800"/>
+        </body>
+      </body>
+
+      <!-- Back Right Leg -->
+      <body name="BR_hip" pos="0.15 -0.15 0">
+        <joint name="BR_hip_joint" axis="1 0 0" range="-90 -20"/>
+        <geom type="capsule" fromto="0 0 0 0 -0.1 -0.2" size="0.03" rgba="0.8 0.6 0.4 1" density="1000"/>
+        <body name="BR_knee" pos="0 -0.1 -0.2">
+          <joint name="BR_knee_joint" axis="1 0 0" range="20 90"/>
+          <geom type="capsule" fromto="0 0 0 0 0 -0.2" size="0.03" rgba="0.8 0.6 0.4 1" density="800"/>
+        </body>
+      </body>
+
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="FL_hip_act" joint="FL_hip_joint"/>
+    <motor name="FL_knee_act" joint="FL_knee_joint"/>
+    <motor name="FR_hip_act" joint="FR_hip_joint"/>
+    <motor name="FR_knee_act" joint="FR_knee_joint"/>
+    <motor name="BL_hip_act" joint="BL_hip_joint"/>
+    <motor name="BL_knee_act" joint="BL_knee_joint"/>
+    <motor name="BR_hip_act" joint="BR_hip_joint"/>
+    <motor name="BR_knee_act" joint="BR_knee_joint"/>
+  </actuator>
+</mujoco>
