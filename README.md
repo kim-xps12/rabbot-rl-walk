@@ -50,8 +50,8 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 1. リポジトリのクローン（または移動）
 
 ```bash
-git clone PIYO
-cd quadruped_air_ppo
+git clone https://github.com/kim-xps12/rabbot-rl-walk.git
+cd rabbot-rl-walk
 ```
 
 2. 依存関係の同期
