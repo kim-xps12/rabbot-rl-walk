@@ -26,9 +26,11 @@ env/
 *~
 .DS_Store
 
-# 学習結果
-logs/
-output/
+# 学習結果（ディレクトリ自体は保持、中身を無視）
+logs/*
+!logs/.gitkeep
+output/*
+!output/.gitkeep
 *.zip
 
 # Jupyter Notebook
